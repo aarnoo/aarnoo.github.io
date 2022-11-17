@@ -18,6 +18,12 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -30,6 +36,18 @@
     <content type="html"><![CDATA[<h2 id="什么是-HTML-语义化标签？"><a href="#什么是-HTML-语义化标签？" class="headerlink" title="什么是 HTML 语义化标签？"></a>什么是 HTML 语义化标签？</h2><h4 id="语义化标签，就是让标签有自己的含义，利用本身传达它所包含内容的一些信息，使浏览器和搜索引擎直观的认识标签和属性的用途和作用。"><a href="#语义化标签，就是让标签有自己的含义，利用本身传达它所包含内容的一些信息，使浏览器和搜索引擎直观的认识标签和属性的用途和作用。" class="headerlink" title="语义化标签，就是让标签有自己的含义，利用本身传达它所包含内容的一些信息，使浏览器和搜索引擎直观的认识标签和属性的用途和作用。"></a>语义化标签，就是让标签有自己的含义，利用本身传达它所包含内容的一些信息，使浏览器和搜索引擎直观的认识标签和属性的用途和作用。</h4><h2 id="为什么要用-H5-语义化标签？"><a href="#为什么要用-H5-语义化标签？" class="headerlink" title="为什么要用 H5 语义化标签？"></a>为什么要用 H5 语义化标签？</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="DIV-标签本身就是一个容器，并没有独特的含义，当大量使用-div-会使文档结构不够清晰，同时影响对页面的读取"><a href="#DIV-标签本身就是一个容器，并没有独特的含义，当大量使用-div-会使文档结构不够清晰，同时影响对页面的读取" class="headerlink" title="DIV 标签本身就是一个容器，并没有独特的含义，当大量使用 div 会使文档结构不够清晰，同时影响对页面的读取"></a>DIV 标签本身就是一个容器，并没有独特的含义，当大量使用 div 会使文档结构不够清晰，同时影响对页面的读取</h4><h4 id="在没有-CSS-的时候，开发者不能够清晰地看出网页的结构，不利于于团队的开发和维护。"><a href="#在没有-CSS-的时候，开发者不能够清晰地看出网页的结构，不利于于团队的开发和维护。" class="headerlink" title="在没有 CSS 的时候，开发者不能够清晰地看出网页的结构，不利于于团队的开发和维护。"></a>在没有 CSS 的时候，开发者不能够清晰地看出网页的结构，不利于于团队的开发和维护。</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 网页头部标签 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>网页导航栏<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 章节区域 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span><br>        内容<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 主要内容 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>  <span class="hljs-comment">&lt;!-- 主体 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>   <span class="hljs-comment">&lt;!-- 章节 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span> 内容 <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 侧边区域 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>网页尾部<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>HTML5</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML5</tag>
+      
+    </tags>
     
   </entry>
   
@@ -43,6 +61,18 @@
     <content type="html"><![CDATA[<h1 id="多媒体标签的属性"><a href="#多媒体标签的属性" class="headerlink" title="多媒体标签的属性"></a>多媒体标签的属性</h1><h2 id="html"><a href="#html" class="headerlink" title="html:"></a>html:</h2><h3 id="音频标签："><a href="#音频标签：" class="headerlink" title="音频标签："></a>音频标签：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br>    标签属性:<br>    autoplay    自动播放<br>    controls    显示控件<br>    loop        循环播放<br><br></code></pre></td></tr></table></figure><h3 id="视频标签："><a href="#视频标签：" class="headerlink" title="视频标签："></a>视频标签：</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs makefile">&lt;video&gt;&lt;/video&gt;<br>autoplay    自动播放<br>controls    显示控件<br>loop        循环播放<br><br><span class="hljs-section">特有属性:poster 视频预览图片</span><br><span class="hljs-section">width:设置宽</span><br><span class="hljs-section">height:设置高</span><br><br></code></pre></td></tr></table></figure><h2 id="js"><a href="#js" class="headerlink" title="js:"></a>js:</h2><h3 id="音频对象"><a href="#音频对象" class="headerlink" title="音频对象:"></a>音频对象:</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 获取音频<br>var aud=document.querySelector(<span class="hljs-string">&#x27;audio&#x27;</span>)<br><span class="hljs-regexp">//</span> 获取视频<br>var vid=document.querySelector(<span class="hljs-string">&#x27;video&#x27;</span>)<br><br><span class="hljs-regexp">//</span> 对象属性<br><span class="hljs-regexp">//</span> 只读属性：<br>aud.duration  <span class="hljs-regexp">//</span>音频的总时间  (只读属性) 未加载音频时为NAN<br>aud.paused  <span class="hljs-regexp">//</span>媒体是否暂停    返回布尔值true或flase  (只读属性)<br>aud.ended    <span class="hljs-regexp">//</span>是否播放结束 返回布尔值true或flase  (只读属性)<br><br><span class="hljs-regexp">//</span> 可修改属性:<br>aud.muted         <span class="hljs-regexp">//</span>读取、设置静音 true/false<br>aud.currentTime   <span class="hljs-regexp">//</span>读取、设置当前播放的时间<br>aud.volume        <span class="hljs-regexp">//</span>读取、设置音量大小 <span class="hljs-number">0</span>~<span class="hljs-number">1</span><br><br><span class="hljs-regexp">//</span> 对象的方法：(参数，返回值)<br>aud.play()        <span class="hljs-regexp">//</span>播放的方法<br>aud.pause()       <span class="hljs-regexp">//</span>暂停的方法<br><br><span class="hljs-regexp">//</span> 事件 DOM 对象的属性：<br>aud.oncanplay=<span class="hljs-keyword">function</span>()&#123;&#125;      <span class="hljs-regexp">//</span>加载完毕后允许播放时触发<br>aud.onpause=<span class="hljs-keyword">function</span>()&#123;&#125;        <span class="hljs-regexp">//</span>暂停时触发<br>aud.onplay=<span class="hljs-keyword">function</span>()&#123;&#125;         <span class="hljs-regexp">//</span>播放开始时触发<br>aud.onended=<span class="hljs-keyword">function</span>()&#123;&#125;        <span class="hljs-regexp">//</span>播放结束时触发<br>aud.ontimeupdate=<span class="hljs-keyword">function</span>()&#123;&#125;   <span class="hljs-regexp">//</span>播放中触发<br><br><span class="hljs-regexp">//</span> 自定义属性：<br>aud.tt<br>aud.timer<br><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>HTML5</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML5</tag>
+      
+    </tags>
     
   </entry>
   
@@ -56,6 +86,18 @@
     <content type="html"><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br>标题一<br><br><span class="hljs-code">    内容</span><br><span class="hljs-code"></span><br></code></pre></td></tr></table></figure><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br>标题一<br><br><span class="hljs-code">    内容</span><br><span class="hljs-code"></span><br></code></pre></td></tr></table></figure><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">aarnoo.github.<span class="hljs-built_in">io</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>第一</tag>
+      
+    </tags>
     
   </entry>
   
