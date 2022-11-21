@@ -54,31 +54,6 @@
   
   
   <entry>
-    <title>了解jQuery</title>
-    <link href="/2022/11/17/%E4%BA%86%E8%A7%A3jQ/"/>
-    <url>/2022/11/17/%E4%BA%86%E8%A7%A3jQ/</url>
-    
-    <content type="html"><![CDATA[<h3 id="jQuery-是什么"><a href="#jQuery-是什么" class="headerlink" title="jQuery 是什么"></a>jQuery 是什么</h3><p>jQuery 是目前使用最广泛的 javascript 函数库。据统计，全世界排名前 100 万的网站，有 46% 使用 jQuery，远远超过其他库。微软公司甚至把 jQuery 作为他们的官方库。对于网页 开发者来说，学会 jQuery 是必要的。因为它让你了解业界最通用的技术，为将来学习 更高级的库打下基础，并且确实可以很轻松地做出许多复杂的效果。<br>jQuery 是一个快速、简洁的 JavaScript 框架，可以简化查询 DOM 操作、事件处理、制作动 画和 Ajax 交互<br>jQuery 设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。<br>2006 年 1 月，John Resig 发布了第一个版本。</p><h2 id="jQuery-特点"><a href="#jQuery-特点" class="headerlink" title="jQuery 特点"></a>jQuery 特点</h2><p><strong>轻量级的 JS 函数库</strong><br><strong>丰富的 DOM 选择器</strong><br><strong>链式表达式：可以把多个操作写在一行代码里，更为简洁。</strong><br><strong>时间，样式，动画支持</strong><br><strong>Ajax 操作支持</strong><br><strong>跨浏览器兼容</strong><br><strong>插件扩展开发：有着丰富的第三方插件，如：树形菜单，日期控件，图片切 换插件，弹出窗口等等</strong><br>jQuery 主要解决了两大问题: （1）它提供了一整套简洁的 API 用于操作 Dom。<br>（2）它抹平了不同浏览器的差异<br>API：英文全称 Application Programming Interface，翻译为“应用程序编程接口”。是一些预 先定义的函数<br>jQuery 下载地址：<a href="http://www.jq22.com/jquery-info122">http://www.jq22.com/jquery-info122</a>此网站有不同版本的 jq 可供下载使用<br>使用版本注意<br>1.x 兼容 ie678，使用最为广泛，官方只做 BUG 维护，功能不再新增。最终版本：1.12.4 (2016 年 5 月 20 日)<br>2.x 不兼容 ie678，官方只做 BUG 维护，功能不再新增。如果不考虑兼容低版本的浏览 器可以使用 2.x，最终版本：2.2.4 (2016 年 5 月 20 日)<br>3.x 不兼容 ie678，只支持最新的浏览器。除非特殊要求，一般不会使用 3.x 版本，很多 老的 jQuery 插件不支持这个版本。目前该版本是官方主要更新维护的版本。<br>查看 JQuery 的版本：控制台输出 $.fn.jquery会返回当前的版本号<br>查看是否成功引入：控制台输出 $&#x3D;&#x3D;&#x3D;jQuery返回true表示成功引入<br>文档就绪事件：原生window.onload &#x3D; function(){};<br>jQuery：$(document).ready(function(){jquery 代码})<br>简写：$(function(){jquery代码});<br>$(document) .ready(function(){})：DOM 加载完毕后就执行，不必等到整个网页资源加载完毕<br>可以同时执行多个<br>window. onload &#x3D; function(){}：必须等到页面内包括图片的所有元素和资源加载完毕后才能执 行<br>不能同时执行多个，如果有多个 window.onload 方法，只会其中执行一个<br>选择器是 jQuery 的根基，在 jQuery 中，对事件处理、遍历 DOM 以及 ajax 操作都依赖于选 择器。jQuery 选择器完全继承了 CSS 的风格，两者的写法十分相似，只不过两者的作用 效果不同。CSS 选择器找到元素后添加样式，而 jQuery 选择器找到元素后添加行为。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>jQuery</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>jQuery,笔记</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>多媒体标签的属性</title>
     <link href="/2022/11/17/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%9E%E6%80%A7/"/>
     <url>/2022/11/17/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%9E%E6%80%A7/</url>
@@ -96,6 +71,31 @@
     <tags>
       
       <tag>HTML5</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>了解jQuery</title>
+    <link href="/2022/11/17/%E4%BA%86%E8%A7%A3jQ/"/>
+    <url>/2022/11/17/%E4%BA%86%E8%A7%A3jQ/</url>
+    
+    <content type="html"><![CDATA[<h3 id="jQuery-是什么"><a href="#jQuery-是什么" class="headerlink" title="jQuery 是什么"></a>jQuery 是什么</h3><p>jQuery 是目前使用最广泛的 javascript 函数库。据统计，全世界排名前 100 万的网站，有 46% 使用 jQuery，远远超过其他库。微软公司甚至把 jQuery 作为他们的官方库。对于网页 开发者来说，学会 jQuery 是必要的。因为它让你了解业界最通用的技术，为将来学习 更高级的库打下基础，并且确实可以很轻松地做出许多复杂的效果。<br>jQuery 是一个快速、简洁的 JavaScript 框架，可以简化查询 DOM 操作、事件处理、制作动 画和 Ajax 交互<br>jQuery 设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。<br>2006 年 1 月，John Resig 发布了第一个版本。</p><h2 id="jQuery-特点"><a href="#jQuery-特点" class="headerlink" title="jQuery 特点"></a>jQuery 特点</h2><p><strong>轻量级的 JS 函数库</strong><br><strong>丰富的 DOM 选择器</strong><br><strong>链式表达式：可以把多个操作写在一行代码里，更为简洁。</strong><br><strong>时间，样式，动画支持</strong><br><strong>Ajax 操作支持</strong><br><strong>跨浏览器兼容</strong><br><strong>插件扩展开发：有着丰富的第三方插件，如：树形菜单，日期控件，图片切 换插件，弹出窗口等等</strong><br>jQuery 主要解决了两大问题: （1）它提供了一整套简洁的 API 用于操作 Dom。<br>（2）它抹平了不同浏览器的差异<br>API：英文全称 Application Programming Interface，翻译为“应用程序编程接口”。是一些预 先定义的函数<br>jQuery 下载地址：<a href="http://www.jq22.com/jquery-info122">http://www.jq22.com/jquery-info122</a>此网站有不同版本的 jq 可供下载使用<br>使用版本注意<br>1.x 兼容 ie678，使用最为广泛，官方只做 BUG 维护，功能不再新增。最终版本：1.12.4 (2016 年 5 月 20 日)<br>2.x 不兼容 ie678，官方只做 BUG 维护，功能不再新增。如果不考虑兼容低版本的浏览 器可以使用 2.x，最终版本：2.2.4 (2016 年 5 月 20 日)<br>3.x 不兼容 ie678，只支持最新的浏览器。除非特殊要求，一般不会使用 3.x 版本，很多 老的 jQuery 插件不支持这个版本。目前该版本是官方主要更新维护的版本。<br>查看 JQuery 的版本：控制台输出 $.fn.jquery 会返回当前的版本号<br>查看是否成功引入：控制台输出 $&#x3D;&#x3D;&#x3D;jQuery 返回 true 表示成功引入</p><h2 id="文档就绪事件："><a href="#文档就绪事件：" class="headerlink" title="文档就绪事件："></a>文档就绪事件：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//原生js：</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;&#125;;<br><br><span class="hljs-comment">// jQuery：</span><br>$(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;jquery 代码&#125;)<br><br><span class="hljs-comment">// 简写：</span><br>$(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;jquery 代码&#125;);<br></code></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// DOM 加载完毕后就执行，不必等到整个网页资源加载完毕可以同时执行多个</span><br>$(<span class="hljs-variable language_">document</span>) .<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;&#125;)<br><span class="hljs-comment">// 必须等到页面内包括图片的所有元素和资源加载完毕后才能执行</span><br><span class="hljs-variable language_">window</span>. onload = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;&#125;<br></code></pre></td></tr></table></figure><h5 id="注：不能同时执行多个，如果有多个-window-onload-方法，只会其中执行一个选择器是-jQuery-的根基，在-jQuery-中，对事件处理、遍历-DOM-以及-ajax-操作都依赖于选-择器。jQuery-选择器完全继承了-CSS-的风格，两者的写法十分相似，只不过两者的作用-效果不同。CSS-选择器找到元素后添加样式，而-jQuery-选择器找到元素后添加行为。"><a href="#注：不能同时执行多个，如果有多个-window-onload-方法，只会其中执行一个选择器是-jQuery-的根基，在-jQuery-中，对事件处理、遍历-DOM-以及-ajax-操作都依赖于选-择器。jQuery-选择器完全继承了-CSS-的风格，两者的写法十分相似，只不过两者的作用-效果不同。CSS-选择器找到元素后添加样式，而-jQuery-选择器找到元素后添加行为。" class="headerlink" title="注：不能同时执行多个，如果有多个 window.onload 方法，只会其中执行一个选择器是 jQuery 的根基，在 jQuery 中，对事件处理、遍历 DOM 以及 ajax 操作都依赖于选 择器。jQuery 选择器完全继承了 CSS 的风格，两者的写法十分相似，只不过两者的作用 效果不同。CSS 选择器找到元素后添加样式，而 jQuery 选择器找到元素后添加行为。"></a>注：不能同时执行多个，如果有多个 window.onload 方法，只会其中执行一个选择器是 jQuery 的根基，在 jQuery 中，对事件处理、遍历 DOM 以及 ajax 操作都依赖于选 择器。jQuery 选择器完全继承了 CSS 的风格，两者的写法十分相似，只不过两者的作用 效果不同。CSS 选择器找到元素后添加样式，而 jQuery 选择器找到元素后添加行为。</h5>]]></content>
+    
+    
+    <categories>
+      
+      <category>jQuery</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>jQuery,笔记</tag>
       
     </tags>
     
