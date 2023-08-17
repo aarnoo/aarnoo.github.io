@@ -1,0 +1,740 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.jpg">
+  <link rel="icon" href="/img/icon.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#04184C">
+  <meta name="author" content="aarnoo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="HTML5 的笔记echarts 柱状图插件echarts 线上地址   setInterval()的返回值:每一次的序号(数字)arr.push()的返回值:每一次添加后的新数组jq 线上地址:                 多媒体 1.音频 html 标签的属性:controls 显示浏览器默认的音频控制器autoplay 自动播放(谷歌,火狐浏览器不能实现自动播放)loop 循环播放(单曲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5">
+<meta property="og:url" content="http://example.com/2023/06/10/H5/index.html">
+<meta property="og:site_name" content="aarnoo的博客">
+<meta property="og:description" content="HTML5 的笔记echarts 柱状图插件echarts 线上地址   setInterval()的返回值:每一次的序号(数字)arr.push()的返回值:每一次添加后的新数组jq 线上地址:                 多媒体 1.音频 html 标签的属性:controls 显示浏览器默认的音频控制器autoplay 自动播放(谷歌,火狐浏览器不能实现自动播放)loop 循环播放(单曲">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-10T04:12:03.000Z">
+<meta property="article:modified_time" content="2023-06-10T05:56:28.400Z">
+<meta property="article:author" content="aarnoo">
+<meta property="article:tag" content="HTML5">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>HTML5 - aarnoo的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>aarnoo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HTML5"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-10 12:12" pubdate>
+          2023年6月10日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          54 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTML5</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="HTML5-的笔记"><a href="#HTML5-的笔记" class="headerlink" title="HTML5 的笔记"></a>HTML5 的笔记</h2><p>echarts 柱状图插件<br>echarts 线上地址</p>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+
+<p>setInterval()的返回值:每一次的序号(数字)<br>arr.push()的返回值:每一次添加后的新数组<br>jq 线上地址:</p>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>              
+
+<p>多媒体 1.音频 <audio src=""></audio><br>html 标签的属性:<br>controls 显示浏览器默认的音频控制器<br>autoplay 自动播放(谷歌,火狐浏览器不能实现自动播放)<br>loop 循环播放(单曲循环)<br>js 音频对象(jsDOM 对象)的属性<br>只读属性<br>paused 是否暂停<br>duration 返回音频的总播放时间<br>ended 是否播放完毕<br>error 媒体发生错误的时候,返回错误代码<br>currentSrc 以字符串的形式返回媒体地址<br>可读写的属性<br>currentTime 当前播放的时间<br>volume 音量 取值范围:0-1<br>muted 设置静音 true 静音 false 不静音<br>方法<br>play()播放<br>pause()暂停<br>音频对象的事件<br>aud.onplay &#x3D; function(){} 播放时触发<br>aud.onended &#x3D; function(){} 播放结束时触发<br>aud.onpause &#x3D; function(){} 暂停时触发<br>aud.ontimeupdate &#x3D; function(){} 播放时间变化时触发 2.视频 <video src=""></video><br>poster:视频播放前的预览图片<br>width、height :设置视频的尺寸<br>videoWidth、videoHeight:视频的实际尺寸(只读)<br>全屏<br>判断是不是全屏<br>document.isFullScreen()<br>document.webkitIsFullScreen()兼容谷歌<br>document.mozIsFullScreen()兼容火狐<br>设置全屏<br>box.requestFullScreen()<br>box.webkitRequestFullScreen()兼容谷歌<br>box.mozRequestFullScreen()兼容火狐<br>box.msRequestFullScreen()兼容 ie<br>取消全屏<br>document.cancelFullScreen()<br>document.webkitCancelFullScreen()兼容谷歌<br>document.mozCancelFullScreen()兼容火狐<br>document.msExitFullScreen()兼容 ie<br>文件读取器<br>打开文件表单的新控件 multiple 允许选择多个文件提交<br><input type="file" multiple> 1.创建文件读取器对象<br>var reader &#x3D; new FileReader(); 2.读取文件<br>reader.readAsDataURL()将文件读取为路径<br>reader.readAsText()将文件读取为文字 3.等待文件读取完毕<br>reader.onload &#x3D; function(){<br>this.result;&#x2F;&#x2F;获取读取的结果<br>}<br>H5 新标签</p>
+<header>头部</header>
+<article>内容</article>
+<aside>侧边区域</aside>
+<nav>导航</nav>
+<section>区块</section>
+<main>主体</main>
+<footer>底部</footer>
+<time>时间</time>
+<label>称谓</label>
+<mark>标记</mark>
+<video>视频</video>
+<audio>音频</audio>
+<address>地址(默认为斜体)</address>
+组合标签
+<details open>描述文档或文档某个部分的细节</details>
+open属性是默认展开
+<dialog>一段对话</dialog>
+<hgroup>标题</hgroup>
+<progress>过度条</progress>
+<summary>元素的标题</summary>
+<datalist>input的提示列表</datalist>
+例:<input type="text" list="valList">
+    <datalist id="valList">
+        <option value="javascript">javascript</option>
+        <option value="jQuery">jQuery</option>
+        <option value="HTML5">HTML5</option>
+    </datalist>
+
+<p>Canvas 画布：<br>什么是 canvas?<br>1-canvas 是 HTML5 提供的一种新标签<canvas></canvas><br>2-HTML5 <canvas>标签元素用于图形的绘制，通过脚本 (通常是 JavaScript)来完成。<br>3-<canvas>标签只是图形容器，必须使用脚本（js）来绘制图形。<br>4-Canvas 是一个矩形区域的画布，可以用 JavaScript 在上面绘画。控制其每一个像素。</p>
+<p>canvas 默认在页面上的大小是 width:300px; height:150px;<br>是图形容器 比须使用（js）来绘制图形<br>canvas：的作用：<br>HTML5 的 canvas 元素使用 JavaScript 在网页上绘制 2d 图像<br>Canvas 是逐像素进行渲染的。<br>画布是一个矩形区域，可以控制其每一个像素<br>canvas 拥有多种绘制矩形、路径、圆形、字符以及添加图像的方法<br>写的 3 步 cnavas：</p>
+<p>fillStyle 属性填充颜色 这个属性是全局 要写在填充矩形上面<br>cxt.fillStyle&#x3D;‘red’</p>
+<p>绘制矩形(实心)有二办法：<br>第一种：<br>fillRect(x,y,w,h)填充矩形(实心)默认颜色黑色<br>X,y 水平垂直坐标 w,h 矩形宽高<br>cxt.fillRect<br>第二种：<br>cxt.rect(100,100,100,100) cxt.fill()<br>strokeStyle 属性填充颜色 这个属性是全局 要写在边框矩形上面<br>cxt.strokeStyle&#x3D;‘red’</p>
+<p>绘制矩形(空心)有二办法：<br>第一种：<br>strokeRect(x,y,w,h) 绘制一个边框矩形(空心)默认颜色黑色<br>cxt.strokeRect()<br>第二种：<br>cxt.rect(100,100,100,100) cxt.stroke()<br>beginPath() 开始绘制一个路径 每写一个图形就要写<br>cxt.beginPath();<br>save()和 restore() 第一种：要一起写类是于一个 div 包裹<br>代表 save 保存图像状态 restore 恢复图像状态</p>
+<p>lineWidth 边框加粗<br>lineWidth&#x3D;30；</p>
+<p>绘制多边形：<br>moveTo(x,y) 绘制路径第一个点的坐标<br>cxt.moveTo(50,300)<br>lineTo(x,y) 绘制路径其他点的坐标<br>cxt.lineTo(20,300)<br>closePath() 第一个点和最后一个点进行链接<br>clearRect(x,y,w,h) 删除一块矩形的区域<br>cxt.clearRect(0,0,oc.width,oc.hieght)</p>
+<p>制作圆弧：<br>arc(x(圆心坐标),y(圆心坐标),r(半径),起始弧度,结束弧度,绘制方向) false 顺时针 true 逆时针<br>arc 就是确定一个圆点的二个点,0 度对应的是 3 点钟方向<br>公式<em>Math.PI&#x2F;180<br>arc(300,300,100,30</em>Math.PI&#x2F;180,60*Math.PI&#x2F;180,,false)</p>
+<p>绘制曲线<br>arcTo(xy,xy,r)<br>第一组坐标 第二组坐标 半径</p>
+<p>canvas 中的 2d 转换<br>translate 位移 cxt.translate(200,200);<br>设置中心 写的形状多大就是他的一半 cxt.translate(-100,-100);<br>rotate 旋转 cxt.rotate(30*Math.PI&#x2F;180) 要写公式<br>scale 缩小放大 cxt.scale(2,2)</p>
+<p>图片预加载：<br>第一步 创建一个构造函数<br>var img&#x3D;new Image<br>第二步 给 img.src 赋值<br>img.src&#x3D;‘图片路径’<br>第三步 图片完全加载后会自动执行一事件<br>img.onload&#x3D;function(){this 就是图片完全加载后的对象}</p>
+<p>绘制插入图片<br>cxt.drawImage(img,x,y,w,h)<br>img:当前图片 x,y 坐标 w,h 宽高</p>
+<p>什么是预加载<br>提前加载图片，当用户需要查看时可直接从本地缓存中渲染</p>
+<p>什么是懒加载<br>当访问一个页面的时候，先把 img 元素或是其他元素的背景图片路径替换成一张大小为 1*1px 图片的路径（这样就只需请求一次，俗称占位图）<br>只有当图片出现在浏览器的可视区域内时，才设置图片正真的路径，让图片显示出来。这就是图片懒加载</p>
+<p>canvas 设置背景：<br>createPattern(img,平铺) no-repeat 不平铺 repeat 平铺<br>repeat-x 水平平铺 repeat-y 垂直平铺</p>
+<p>canvas 文本操作：<br>strokeText(文字,x,y) 文字边框 文字 水平 垂直</p>
+<p>fillText(文字,x,y) 文字填充 文字 水平 垂直</p>
+<p>font 文字大小 4 个值 样式 大小 加粗 字体<br>cxt.font&#x3D;italic 60px bold Arial</p>
+<p>textAlign 水平方式对齐 3 个值 left right center<br>cxt.textAlign&#x3D;’center’</p>
+<p>textBaseline 垂直方式对齐 3 个值 top bottom middle<br>cxt.textBaseline&#x3D;’top’</p>
+<p>measureText(文字) 检查字体宽度<br>cxt.measureText().width</p>
+<p>文字阴影<br>shadowOffsetY y 轴偏移</p>
+<p>shadowOffsetX x 轴偏移</p>
+<p>shadowBlur 高斯模糊值</p>
+<p>shadowColor 阴影颜色</p>
+<p>canvas 关于像素的操作<br>ctx.drawImage(img,x,y,w,h)在画布上画图片<br>ctx.getImageData(x,y,w,h)获取图像数据<br>x,y 表示位置 wh 表示宽高<br>属性包括 width：一行的像素个数 height：一列的个数 data：一个数组，包含 rgba 四个值，每个值都位于 0——255 之间的整数<br>ctx.putImageData(设置图像，x，y) 将图片对象数据画到画布上<br>ctx.createImageData(w,h) 创建图片对象（设置新的像素矩阵，初始值是全透明的黑色 同样会返回三个属性 width height data）<br>toDataURL() 将画布导出为图像 返回是一个字符串<br>var base&#x3D;oC.toDataURL();<br>Img.src&#x3D;base<br>这个字符串 是一个特殊的格式编码 base64 格式编码<br>base64 格式编码 1.这个格式编码可以直接被多媒体(img,video,audio)的 src 属性识别<br>2.base64 格式编码属于二进制,所以压缩性能很强,最大压缩比率达到 50%,1Mb 的图片–》500K 左右 有损压缩,会降低图片的质量 3.将图片转成 base64 格式编码 会比原有图片体积要大,大三分之一左右 10mb 图片—》13mb base64 压缩一半》7,5mb<br>前端性能优化法案之一:<br>图片转成 base64 格式编码,好处:减少 http 请求<br>缺点:加载 css 时间会变慢一点</p>
+<p>cdn 托管（这个没有讲）<br>Svg<br>SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics）</p>
+<p>什么是 svg：<br>SVG 指可伸缩矢量图形 (Scalable Vector Graphics)<br>SVG 用来定义用于网络的基于矢量的图形<br>SVG 使用 XML 格式定义图形<br>SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失<br>SVG 是万维网联盟的标准</p>
+<p>xml 使用规范（基本语法）<br>1.xml 文档的后缀名必须为.xml<br>2.xml 第一行必须定义为文档声明<br>3.xml 文档中有且仅有一个根标签【就是只能有一个根标签】 4.属性值必须使用双引号或单引号引起来 5.标签必须是有开始和有结束的<br>6.xml 是区分大小写的</p>
+<p>xmlns 命名空间：属性值这个网址是一套规则  ，这个规则里定义了 xmlns&#x3D;‘<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg%E2%80%99">http://www.w3.org/2000/svg’</a><br>含义：规定标签的作用</p>
+<p>circle(cx,cy,r) 圆形<br>cx(圆心水平方向坐标) cy(圆心垂直方向坐标) r（半径）<br>fill(填充颜色) storke(边框颜色) storke-width(边框宽度) transparent&#x2F;none(透明)</p>
+<p>rect(width,height,x,y,)矩形<br>width(矩形宽度) height(矩形高度)<br>x(水平方向坐标) y(垂直方向坐标)<br>rx（矩形圆角的弧度水平方向上的半径） ry（矩形圆角的弧度垂直方向的半径）</p>
+<p>line(x1,y1,x2,y2)线段<br>x1(起始点的水平方向坐标) y1(起始点的垂直方向坐标)<br>x2(终点的水平方向坐标) y2(终点的垂直方向坐标)<br>storke-opacity(线段颜色的透明度)</p>
+<p>svg 引入有三种：<br>第一种:<img src=’路径地址’><br>第二种:<iframe src=’路径地址’ frameborder=’0’></iframe><br>第三种:直接使用 svg 标签</p>
+<div>
+<svg xmlns=’http://www.w3.org/2000/svg’></svg>
+</div>
+g标签 类是一个div
+公有属性可以实现  fill stroke  stroke-width  stroke-opacity(none/transparent)
+transform：translate(300,300)
+
+<p>g 标签表示分组的意思,g 标签可以理解为将里面所有的子标签当做一个整体,g 标签中定义的属性,会被里面子标签继承 属性是有限制的<br>只有公有属性才能被定义到 g 标签中,可以给 g 标签加一个 id 或者 class,操作 g 标签,就等于操作了里面所有子标签</p>
+<p>polyline (points 水平 垂直 坐标) 标签用于绘制一根折线，水平坐标与垂直坐标之间用逗号分隔，点与点之间用空格分隔<br>&lt;polyline points&#x3D;’50,50 300,150 175,300’&gt;</p>
+<p>polygon (points 水平 垂直 坐标) 标签用于绘制多边形(线连接一起)<br>&lt;polygon points&#x3D;’50,50 300,150 175,300’&gt;</p>
+<p>ellipse(cx cy rx ry)标签用于绘制椭圆，cx 和 cy 属性指定了椭圆中心的水平坐标和垂直坐标,rx 和 ry 属性指定了椭圆的水平半径和垂直半径<br>path 用于绘制路径 path 表示路径有一个 d 属性 属性中<br>M 大写的 M 表示绘制第一个点跟 canvas.moveTo(x,y)效果一样<br>L 表示绘制其他的点 跟 canvas.lineTo(x,y)效果一样<br>Z 表示闭合路径 和 canvas.closePath()效果一样</p>
+<p>text(text-anchor&#x3D;’middle’) text-anchor 水平居中 标签 元素内部可以放任何的文字</p>
+<p>在 SVG 中有两种截然不同的文本模式. 一种是写在图像中的文本，另一种是 SVG 字体，现在我们主要集中前者：写在图像中的文本。</p>
+<p>image(x,y,width,height xlink:href)<br>X&#x2F;y 水平垂直 width&#x2F;height 大小 xlink:href&#x3D;’图片路径’标签</p>
+<p>use(x,y,href)标签用于复制一个形状<br>href 属性指定索要复制的节点<br>X&#x2F;y 属性为水平和垂直方向的坐标<br><use href=’#1’ x=’50’ y=’50’></use><br>defs 标签 需要再次使用的引用元素定义在 defs 元素里面在 defs 元素中定义的图形元素不会直接呈现利用 <use>元素呈现这些元素</p>
+<p>本地存储<br>将数据保存到本地主机的硬盘里<br>本地存储的含义:浏览器里 将一些所需要的数据保存到电脑硬盘里的 一种方式<br>cookie 1.需要服务器环境 才能运行 2.存储数据的格式为 key &#x3D; val(键值对) 字符串 3.默认为临时存储 关闭浏览器数据自动删除 可以设置存储时间(保质期) 4.存储数据的大小为 4KB<br> 5.同源(同端口,同域名,同协议)的数据可以共享<br>localStorage 永久存储 1.不需要服务器环境 就能运行 在浏览器就能用 2.存储数据的格式为 字符串(json 字符串) 3.默认为永久存储 只能手动删除 数据才能删除 4.存储数据的大小为 5MB 5.同源(同端口,同域名,同协议)的数据可以共享<br>sessionStorage 临时存储 1.不需要服务器环境 就能运行 在浏览器就能用 2.存储数据的格式为 字符串(json 字符串) 3.默认为永久存储 浏览器或页面关闭 数据自动删除 4.存储数据的大小为 5MB 5.同页面的数据可以共享<br>JSON.stringify()将 js 对象转为字符串对象<br>JSON.parse()将字符串对象转为 js 对象</p>
+<p>Cookie<br>数据的生命周期: 一般由服务器生成，可设置失效时间。如果在浏览器端生成 Cookie，默认是关闭浏览器后失效<br>存放数据大小 4K 左右<br>与服务器端通信 每次都会携带在 HTTP 头中，如果使用 cookie 保存过多数据会带来性能问题<br>localStorage<br>数据的生命周期： 除非被清除，否则永久保存<br>存放数据大小 一般为 5MB 左右<br>与服务器端通信 仅在客户端（即浏览器）中保存，不参与和服务器的通信<br>sessionStorage<br>数据的生命周期: 仅在当前会话下有效，关闭页面或浏览器后被清除<br>存放数据大小 一般为 5MB 左右<br>与服务器端通信 仅在客户端（即浏览器）中保存，不参与和服务器的通信</p>
+<p>getItem(读取内容) 获取数据<br>setItem(存储内容) 设置存储数据<br>removeItem() 删除键值对 key 的存储内容<br>clear()清空所有存储内容</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/HTML5/" class="category-chain-item">HTML5</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/HTML5/">#HTML5</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HTML5</div>
+      <div>http://example.com/2023/06/10/H5/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>aarnoo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/10/markdown%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/" title="markdown语法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">markdown语法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/17/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <script src="js/canvas-nest.js" color="55,255,25" count="120"></script>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>aarnoo的博客</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div>记录成长过程</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/color.js"></script>
+<script src="/js/canvas-nest.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

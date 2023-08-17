@@ -1,0 +1,916 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.jpg">
+  <link rel="icon" href="/img/icon.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#04184C">
+  <meta name="author" content="aarnoo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Git 常用命令Git 常用的六个命令是什么？ git clone克隆代码；git log查看日志；git tag查看标签；git branch查看分支；git branch -a查看远程分支；git pull拉取。   git init # 初始化本地 git 仓库(创建新仓库) git config –global user.name “” # 配置用户名 git config –global">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git常用指令">
+<meta property="og:url" content="http://example.com/2023/08/17/git%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="aarnoo的博客">
+<meta property="og:description" content="Git 常用命令Git 常用的六个命令是什么？ git clone克隆代码；git log查看日志；git tag查看标签；git branch查看分支；git branch -a查看远程分支；git pull拉取。   git init # 初始化本地 git 仓库(创建新仓库) git config –global user.name “” # 配置用户名 git config –global">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-17T03:11:29.000Z">
+<meta property="article:modified_time" content="2023-08-17T12:34:11.718Z">
+<meta property="article:author" content="aarnoo">
+<meta property="article:tag" content="Git,GitHub">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Git常用指令 - aarnoo的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>aarnoo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Git常用指令"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-17 11:11" pubdate>
+          2023年8月17日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          34 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Git常用指令</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h1><h3 id="Git-常用的六个命令是什么？"><a href="#Git-常用的六个命令是什么？" class="headerlink" title="Git 常用的六个命令是什么？"></a>Git 常用的六个命令是什么？</h3><blockquote>
+<p><strong>git clone</strong>克隆代码；<br><strong>git log</strong>查看日志；<br><strong>git tag</strong>查看标签；<br><strong>git branch</strong>查看分支；<br><strong>git branch -a</strong>查看远程分支；<br><strong>git pull</strong>拉取。</p>
+</blockquote>
+<ul>
+<li><strong>git init</strong> # 初始化本地 git 仓库(创建新仓库)</li>
+<li><strong>git config –global user.name “”</strong> # 配置用户名</li>
+<li><strong>git config –global user.email “”</strong> # 配置邮箱</li>
+<li><strong>git config –global color.ui true</strong> # git status 等命令自动着色</li>
+<li><strong>git status</strong> 这个命令顾名思义就是查看状态， 这个命令可以算是使用最频繁的一个命令了， 建议大家没事就输入下这个命令， 来查看你当前 git 仓库的一些状态。</li>
+<li><strong>git add</strong> 文件名将文件添加到git仓库中 git add . 就是将没添加的数据都添加上去</li>
+<li><strong>git commit -m ’ ’</strong> 在add之后提交 -m ‘ ’ 放入提交信息 如：first<br>  commit 执行了以上命令代表我们已经正式进行了第一次提交</li>
+</ul>
+<p>  看到这里估计很多人会有疑问， 我想要提交直接进行 commit 不就行了么， 为什么先要再 add一次呢？ 首先 git add 是先把改动添加到一个「暂存区」 ， 你可以理解成是一个缓存区域， 临时保存你的改动， 而 git commit 才是最后真正的提交。 这样做的好处就是防止误提交， 当然也有办法把这两步合并成一步， 不过后面再介绍， 建议新手先按部就班的一步步来。</p>
+<ul>
+<li><p><strong>git branch</strong> 列出本地所有的分支</p>
+<blockquote>
+<p><strong>git branch -r</strong> 列出所有远程分支<br><strong>git branch [name]</strong> 新建一个分支，但依然停留在当前分支<br><strong>git checkout -b [branch]</strong> 新建一个分支，并切换到该分支<br><strong>git merge [branch]</strong> 合并指定分支到当前分支<br><strong>git branch -d [name]</strong> 删除分支<br><strong>git checkout [name]</strong> <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF&spm=1001.2101.3001.7020">切换分支</a><br><strong>git push origin –delete [name]</strong> 删除远端分支</p>
+<p><strong>git push origin –delete feat-20221031-amisgit branch -dr [remote&#x2F;branch]</strong> 删除远端分支</p>
+</blockquote>
+</li>
+<li><p><strong>git config –list</strong> 显示当前<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Git%E9%85%8D%E7%BD%AE&spm=1001.2101.3001.7020">Git配置</a></p>
+</li>
+<li><p>设置提交代码时的用户信息</p>
+<blockquote>
+<p><strong>git config –global user.name “[name]”</strong><br><strong>git config –global user.email “[email address]”</strong></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>-d：可以删除文件夹，因为默认是删除的是file</p>
+</blockquote>
+<blockquote>
+<p>-f：代表强制，如果clean.requireForce配置的为true，则git clean会执行失败，此时可以使用git clean -f强制执行。</p>
+</blockquote>
+<blockquote>
+<p>-i：interactive，可交互的删除文件或目录，这个就比较有意思了，哈哈。</p>
+</blockquote>
+<blockquote>
+<p>-n：dry-run，加入了这个参数，会提示你将会删除哪些文件，但不会删除这些文件。如果确定是你要删除的文件，在将-n这个参数     去掉在执行就OK了。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="新建代码"><a href="#新建代码" class="headerlink" title="新建代码"></a>新建代码</h2><p>在当前目录新建一个Git代码库</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个目录，将其初始化为Git代码库</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span> [project-name]<br></code></pre></td></tr></table></figure>
+
+<p>下载一个项目和它的整个代码历史</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">git <span class="hljs-keyword">clone</span> [url]<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>显示当前的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Git%E9%85%8D%E7%BD%AE&spm=1001.2101.3001.7020">Git配置</a></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">git <span class="hljs-built_in">config</span> <span class="hljs-comment">--list</span><br></code></pre></td></tr></table></figure>
+
+<p>编辑Git配置文件</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">git <span class="hljs-built_in">config</span> -e [<span class="hljs-comment">--global]</span><br></code></pre></td></tr></table></figure>
+
+<p>设置提交代码时的用户信息</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git config [--<span class="hljs-keyword">global</span>] user.name <span class="hljs-string">&quot;[name]&quot;</span><br><br><br><br>git config [--<span class="hljs-keyword">global</span>] user.email <span class="hljs-string">&quot;[email address]&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="增加-x2F-删除文件"><a href="#增加-x2F-删除文件" class="headerlink" title="增加&#x2F;删除文件"></a>增加&#x2F;删除文件</h2><p>添加指定文件到暂存区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">git add [file1] [file2] ...<br></code></pre></td></tr></table></figure>
+
+<p>添加指定目录到暂存区，包括子目录</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">add</span> [dir]<br></code></pre></td></tr></table></figure>
+
+<p>加当前目录的所有文件到暂存区</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">add</span> .<br></code></pre></td></tr></table></figure>
+
+<p>删除工作区文件，并且将这次删除放入暂存区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">git rm [file1] [file2] ...<br></code></pre></td></tr></table></figure>
+
+<p>停止追踪指定文件，但该文件会保留在工作区</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git rm <span class="hljs-attr">--cached</span> <span class="hljs-selector-attr">[file]</span><br></code></pre></td></tr></table></figure>
+
+<p>改名文件，并且将这个改名放入暂存区</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">mv</span> <span class="hljs-selector-attr">[file-original]</span> <span class="hljs-selector-attr">[file-renamed]</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h2><p>提交暂存区到仓库区</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">commit</span> <span class="hljs-selector-tag">-m</span> <span class="hljs-selector-attr">[message]</span><br></code></pre></td></tr></table></figure>
+
+<p>提交暂存区的指定文件到仓库区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">git commit [file1] [file2] ... -m [message]<br></code></pre></td></tr></table></figure>
+
+<p>提交工作区自上次commit之后的变化，直接到仓库区</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">git <span class="hljs-keyword">commit</span> <span class="hljs-operator">-</span>a<br></code></pre></td></tr></table></figure>
+
+<p>提交时显示所有diff信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">git <span class="hljs-keyword">commit</span> <span class="hljs-operator">-</span>v<br></code></pre></td></tr></table></figure>
+
+<p>使用一次新的commit，替代上一次提交</p>
+<p>如果代码没有任何新变化，则用来改写上一次commit的提交信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">git <span class="hljs-keyword">commit</span> <span class="hljs-comment">--amend -m [message]</span><br></code></pre></td></tr></table></figure>
+
+<p>重做上一次commit，并包括指定文件的新变化</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">git <span class="hljs-keyword">commit</span> <span class="hljs-comment">--amend   ...</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>列出所有本地分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch<br></code></pre></td></tr></table></figure>
+
+<p>列出所有远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git branch -r<br></code></pre></td></tr></table></figure>
+
+<p>列出所有本地分支和远程分支</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git branch -<span class="hljs-selector-tag">a</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个分支，但依然停留在当前分支</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">branch</span> <span class="hljs-selector-attr">[branch-name]</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个分支，并切换到该分支</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git checkout -<span class="hljs-selector-tag">b</span> <span class="hljs-selector-attr">[branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个分支，指向指定commit</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">branch</span> <span class="hljs-selector-attr">[branch]</span> <span class="hljs-selector-attr">[commit]</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个分支，与指定的远程分支建立追踪关系</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git branch <span class="hljs-attr">--track</span> <span class="hljs-selector-attr">[branch]</span> <span class="hljs-selector-attr">[remote-branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>切换到指定分支，并更新工作区</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">checkout</span> <span class="hljs-selector-attr">[branch-name]</span><br></code></pre></td></tr></table></figure>
+
+<p>建立追踪关系，在现有分支与指定的远程分支之间</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git branch <span class="hljs-attr">--set-upstream</span> <span class="hljs-selector-attr">[branch]</span> <span class="hljs-selector-attr">[remote-branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>合并指定分支到当前分支</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">merge</span> <span class="hljs-selector-attr">[branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>选择一个commit，合并进当前分支</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">cherry-pick</span> <span class="hljs-selector-attr">[commit]</span><br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF&spm=1001.2101.3001.7020">删除分支</a></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">branch</span> <span class="hljs-selector-tag">-d</span> <span class="hljs-selector-attr">[branch-name]</span><br></code></pre></td></tr></table></figure>
+
+<p>删除远程分支</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs perl">git <span class="hljs-keyword">push</span> origin --<span class="hljs-keyword">delete</span> <br><br><br><br>git branch -dr<br></code></pre></td></tr></table></figure>
+
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>列出所有tag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git tag<br></code></pre></td></tr></table></figure>
+
+<p>新建一个tag在当前commit</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">tag</span> <span class="hljs-selector-attr">[tag]</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个tag在指定commit</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">tag</span> <span class="hljs-selector-attr">[tag]</span> <span class="hljs-selector-attr">[commit]</span><br></code></pre></td></tr></table></figure>
+
+<p>查看tag信息</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">show</span> <span class="hljs-selector-attr">[tag]</span><br></code></pre></td></tr></table></figure>
+
+<p>提交指定tag</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">push</span> <span class="hljs-selector-attr">[remote]</span> <span class="hljs-selector-attr">[tag]</span><br></code></pre></td></tr></table></figure>
+
+<p>提交所有tag</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git push <span class="hljs-selector-attr">[remote]</span> <span class="hljs-attr">--tags</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个分支，指向某个tag</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git checkout -<span class="hljs-selector-tag">b</span> <span class="hljs-selector-attr">[branch]</span> <span class="hljs-selector-attr">[tag]</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="查看所有信息"><a href="#查看所有信息" class="headerlink" title="查看所有信息"></a>查看所有信息</h2><p>显示有变更的文件</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">git <span class="hljs-built_in">status</span><br></code></pre></td></tr></table></figure>
+
+<p>显示当前分支的版本历史</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs perl">git <span class="hljs-keyword">log</span><br></code></pre></td></tr></table></figure>
+
+<p>显示commit历史，以及每次commit发生变更的文件</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs perl">git <span class="hljs-keyword">log</span> --<span class="hljs-keyword">stat</span><br></code></pre></td></tr></table></figure>
+
+<p>显示某个文件的版本历史，包括文件改名</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss">git log <span class="hljs-attr">--follow</span> <span class="hljs-selector-attr">[file]</span><br><br><br><br>git whatchanged <span class="hljs-selector-attr">[file]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示指定文件相关的每一次diff</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git log -<span class="hljs-selector-tag">p</span> <span class="hljs-selector-attr">[file]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示指定文件是什么人在什么时间修改过</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">blame</span> <span class="hljs-selector-attr">[file]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示暂存区和工作区的差异</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git diff<br></code></pre></td></tr></table></figure>
+
+<p>显示暂存区和上一个commit的差异</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git diff <span class="hljs-attr">--cached</span> <span class="hljs-selector-attr">[]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示工作区与当前分支最新commit之间的差异</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git diff HEAD<br></code></pre></td></tr></table></figure>
+
+<p>显示两次提交之间的差异</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">diff</span> <span class="hljs-selector-attr">[first-branch]</span>...<span class="hljs-selector-attr">[second-branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示某次提交的元数据和内容变化</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">git <span class="hljs-keyword">show</span> [<span class="hljs-keyword">commit</span>]<br></code></pre></td></tr></table></figure>
+
+<p>显示某次提交发生变化的文件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">git <span class="hljs-keyword">show</span> <span class="hljs-comment">--name-only [commit]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示某次提交时，某个文件的内容</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">show</span> <span class="hljs-selector-attr">[commit]</span>:<span class="hljs-selector-attr">[filename]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示当前分支的最近几次提交</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git reflog<br></code></pre></td></tr></table></figure>
+
+<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><p>下载远程仓库的所有变动</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">fetch</span> <span class="hljs-selector-attr">[remote]</span><br></code></pre></td></tr></table></figure>
+
+<p>显示所有远程仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git remote -v<br></code></pre></td></tr></table></figure>
+
+<p>显示某个远程仓库的信息</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">remote</span> <span class="hljs-selector-tag">show</span> <span class="hljs-selector-attr">[remote]</span><br></code></pre></td></tr></table></figure>
+
+<p>增加一个新的远程仓库，并命名</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">remote</span> <span class="hljs-selector-tag">add</span> <span class="hljs-selector-attr">[shortname]</span> <span class="hljs-selector-attr">[url]</span><br></code></pre></td></tr></table></figure>
+
+<p>取回远程仓库的变化，并与本地分支合并</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">pull</span> <span class="hljs-selector-attr">[remote]</span> <span class="hljs-selector-attr">[branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>上传本地指定分支到远程仓库</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">push</span> <span class="hljs-selector-attr">[remote]</span> <span class="hljs-selector-attr">[branch]</span><br></code></pre></td></tr></table></figure>
+
+<p>强行推送当前分支到远程仓库，即使有冲突</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git push <span class="hljs-selector-attr">[remote]</span> <span class="hljs-attr">--force</span><br></code></pre></td></tr></table></figure>
+
+<p>推送所有分支到远程仓库</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git push <span class="hljs-selector-attr">[remote]</span> <span class="hljs-attr">--all</span><br></code></pre></td></tr></table></figure>
+
+<p>恢复暂存区的指定文件到工作区</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">checkout</span> <span class="hljs-selector-attr">[file]</span><br></code></pre></td></tr></table></figure>
+
+<p>恢复某个commit的指定文件到工作区</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">checkout</span> <span class="hljs-selector-attr">[commit]</span> <span class="hljs-selector-attr">[file]</span><br></code></pre></td></tr></table></figure>
+
+<p>恢复上一个commit的所有文件到工作区</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs erlang">git checkout .<br></code></pre></td></tr></table></figure>
+
+<p>重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">git reset [file]<br></code></pre></td></tr></table></figure>
+
+<p>重置暂存区与工作区，与上一次commit保持一致</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs perl">git <span class="hljs-keyword">reset</span> --hard<br></code></pre></td></tr></table></figure>
+
+<p>重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">git reset [commit]<br></code></pre></td></tr></table></figure>
+
+<p>重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git reset <span class="hljs-attr">--hard</span> <span class="hljs-selector-attr">[commit]</span><br></code></pre></td></tr></table></figure>
+
+<p>重置当前HEAD为指定commit，但保持暂存区和工作区不变</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git reset <span class="hljs-attr">--keep</span> <span class="hljs-selector-attr">[commit]</span><br></code></pre></td></tr></table></figure>
+
+<p>新建一个commit，用来撤销指定commit，后者的所有变化都将被前者抵消，并且应用到当前分支</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">git</span> <span class="hljs-selector-tag">revert</span> <span class="hljs-selector-attr">[commit]</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>生成一个可供发布的压缩包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git archive<br></code></pre></td></tr></table></figure>
+
+<p>备份当前工作区的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git stash<br></code></pre></td></tr></table></figure>
+
+<p>从Git栈中读取最近一次保存的内容，恢复工作区的相关内容</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs perl">git stash <span class="hljs-keyword">pop</span><br></code></pre></td></tr></table></figure>
+
+<p>显示Git栈内的所有备份</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git stash list<br></code></pre></td></tr></table></figure>
+
+<p>清空Git栈</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">git stash <span class="hljs-attribute">clear</span><br></code></pre></td></tr></table></figure>
+
+<p>git clean —— 未追踪文件清除神器</p>
+<p>测试清理效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git clean -dn<br></code></pre></td></tr></table></figure>
+
+<p>输入下面的这句话，就会在你的浏览器出现关于git clean相关的详解。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Git/" class="category-chain-item">Git</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Git-GitHub/">#Git,GitHub</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Git常用指令</div>
+      <div>http://example.com/2023/08/17/git的一些指令/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>aarnoo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/10/markdown%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/" title="markdown语法">
+                        <span class="hidden-mobile">markdown语法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <script src="js/canvas-nest.js" color="55,255,25" count="120"></script>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>aarnoo的博客</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div>记录成长过程</div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/color.js"></script>
+<script src="/js/canvas-nest.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
