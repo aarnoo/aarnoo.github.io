@@ -123,6 +123,7 @@ function clickEffect() {
   }
 
   function loop() {
+
     ctx.fillStyle = "rgba(255, 255, 255, 0)";
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < balls.length; i++) {
